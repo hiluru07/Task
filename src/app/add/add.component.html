@@ -1,0 +1,31 @@
+<a mat-raised-button routerLink="/view/" style="margin-left: 520px;position: fixed; margin-top: 100px;">Back</a>
+<form class="example-form" [formGroup]="Obj" (ngSubmit)="submit()" style="margin: auto; margin-top: 200px;" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Your Title</mat-label>
+      <input matInput placeholder="Ex. Pizza" minlength="4" formControlName="title">
+      <mat-error *ngIf="Obj.controls['title'].hasError('required')">
+        Please enter your title...
+      </mat-error>
+      <mat-error *ngIf="Obj.controls['title'].hasError('minlength')">
+        Please enter at least 6 characters...
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..." formControlName="content" minlength="15" maxlength="100"></textarea>
+      <mat-error *ngIf="Obj.controls['content'].hasError('required')">
+        Please enter your content...
+      </mat-error>
+      <mat-error *ngIf="Obj.controls['content'].hasError('minlength')">
+        Please enter at least 15 characters...
+      </mat-error>
+      <mat-error *ngIf="Obj.controls['content'].hasError('maxlength')">
+        Please enter no more than 100 characters...
+    </mat-error>
+    </mat-form-field>
+    <button mat-flat-button color="primary" [disabled]="Obj.invalid">Primary</button> 
+</form>
+  
+  
+  

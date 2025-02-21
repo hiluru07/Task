@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": "98b6",
+      "title": "angular",
+      "content": "Angular is a TypeScript-based free and open-source single-page web application framework. "
+    },
+    {
+      "id": "1a9b",
+      "title": "React JS",
+      "content": "React is a free and open-source front-end JavaScript library."
+    },
+    {
+      "id": "5b7b",
+      "title": "Node JS",
+      "content": "Node.js is a cross-platform, open-source JavaScript runtime environment "
+    }
+  ]
+}

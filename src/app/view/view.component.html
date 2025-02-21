@@ -1,0 +1,33 @@
+<div class="scroll-container">
+    <div class="card-container mat-elevation-z4" cdkDropList #todoList="cdkDropList"
+      [cdkDropListData]="array" [cdkDropListConnectedTo]="[inProgressList]" 
+      (cdkDropListDropped)="drop($event)"> 
+      <div class="add-button">
+        <a routerLink="/add/" mat-raised-button color="accent">ADD</a>
+      </div>
+      <div class="grid-wrapper">
+        <div *ngFor="let i of array" cdkDrag class="card">
+          <h5>{{ i.title }}</h5>
+          <p>{{ i.content }}</p>
+          <div class="btn-group">
+            <a routerLink="/edit/{{i.id}}" mat-flat-button color="primary" class="small-btn">Edit</a>
+            <button mat-flat-button color="warn" (click)="remove(i.id)">Delete</button> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-container mat-elevation-z4" cdkDropList #inProgressList="cdkDropList"
+      [cdkDropListData]="array2" [cdkDropListConnectedTo]="[todoList]" 
+      (cdkDropListDropped)="drop($event)">
+      
+      <h4>Drop and Drag</h4>
+      <div class="grid-wrapper">
+        <div *ngFor="let i of array2" cdkDrag class="card">
+          <h5>{{ i.title }}</h5>
+          <p>{{ i.content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-container mat-elevation-z4"></div>
+  </div>
+  
